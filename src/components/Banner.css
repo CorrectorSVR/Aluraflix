@@ -1,0 +1,85 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* Ocupa la mitad de la altura de la pantalla */
+  overflow: hidden;
+  margin-top: 140px; /* Ajusta este valor según la altura del header */
+}
+  
+  .banner__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+  }
+  
+  .banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Oscurece la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .banner__title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  @media (max-width: 768px) {
+    .banner {
+      height: 30vh; /* Reduce la altura */
+    }
+  
+    .banner__title {
+      font-size: 1.5rem; /* Reduce el tamaño del texto */
+    }
+  }
+
+  /* Media queries para diseño responsivo */
+
+/* Dispositivos pequeños (teléfonos en orientación vertical) */
+@media (max-width: 600px) {
+  .banner {
+    height: 30vh; /* Ocupa menos altura en pantallas pequeñas */
+  }
+
+  .banner__title {
+    font-size: 1.5rem; /* Reduce el tamaño de la fuente */
+  }
+}
+
+/* Dispositivos medianos (tabletas en orientación vertical) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .banner {
+    height: 40vh; /* Ajusta la altura para tabletas */
+  }
+
+  .banner__title {
+    font-size: 1.75rem; /* Ajusta el tamaño de la fuente */
+  }
+}
+
+/* Dispositivos grandes (escritorios y tabletas en orientación horizontal) */
+@media (min-width: 1025px) {
+  .banner {
+    height: 50vh; /* Mantiene la altura para pantallas grandes */
+  }
+
+  .banner__title {
+    font-size: 2rem; /* Mantiene el tamaño de la fuente */
+  }
+}
+
+@media (max-width: 380px) and (min-width: 355px) and (orientation: portrait) {
+  .banner__title {
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente según sea necesario */
+  }
+}
+

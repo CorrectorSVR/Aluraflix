@@ -1,0 +1,108 @@
+.new-video {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.new-video h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-video-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-video-form label {
+  margin-bottom: 10px;
+}
+
+.new-video-form input,
+.new-video-form select,
+.new-video-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+.form-actions button[type="reset"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Diseño responsivo */
+@media (max-width: 1200px) {
+  .new-video {
+    padding: 15px;
+    max-width: 80%;
+  }
+
+  .new-video-form input,
+  .new-video-form select,
+  .new-video-form textarea {
+    padding: 6px;
+  }
+
+  .form-actions button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .new-video {
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-actions button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-video h1 {
+    font-size: 1.5rem;
+  }
+
+  .new-video-form label {
+    font-size: 0.9rem;
+  }
+
+  .new-video-form input,
+  .new-video-form select,
+  .new-video-form textarea {
+    padding: 5px;
+  }
+
+  .form-actions button {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}

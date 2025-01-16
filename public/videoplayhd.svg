@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:#303030;stroke-width:2.5}
+    .str0 {stroke:#686868;stroke-width:2.5}
+    .fil5 {fill:none}
+    .fil4 {fill:#F2F2F2}
+    .fil1 {fill:url(#id0)}
+    .fil3 {fill:url(#id1)}
+    .fil2 {fill:url(#id2)}
+    .fil0 {fill:url(#id3)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="250" y1="270.602" x2="250" y2="79.998">
+   <stop offset="0" style="stop-color:#74C7FF"/>
+   <stop offset="1" style="stop-color:#17A2FF"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="262.261" y1="170.01" x2="262.261" y2="247.12">
+   <stop offset="0" style="stop-color:#CBCBCB"/>
+   <stop offset="1" style="stop-color:#F2F2F2"/>
+  </linearGradient>
+  <radialGradient id="id2" gradientUnits="objectBoundingBox" cx="21.0007%" cy="85.0016%" r="50.0009%" fx="21.0007%" fy="85.0016%">
+   <stop offset="0" style="stop-color:#F2F2F2"/>
+   <stop offset="1" style="stop-color:#D8D8D8"/>
+  </radialGradient>
+  <radialGradient id="id3" gradientUnits="objectBoundingBox" cx="66.0001%" cy="67.0001%" r="50%" fx="66.0001%" fy="67.0001%">
+   <stop offset="0" style="stop-color:#74C7FF"/>
+   <stop offset="1" style="stop-color:#0099FF"/>
+  </radialGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0" x="20" y="80" width="460" height="340" rx="45" ry="45"/>
+  <path class="fil1" d="M65 80l370 0c25,0 45,20 45,45l0 75c-153,71 -307,62 -460,0l0 -75c0,-25 20,-45 45,-45z"/>
+  <path class="fil2" d="M333 242l-65 -37 -65 -38c-3,-1 -6,-1 -9,0 -3,2 -4,5 -4,8l0 150c0,3 1,6 4,8 3,1 6,1 9,0l65 -38 65 -37c3,-2 4,-5 4,-8 0,-3 -1,-6 -4,-8z"/>
+  <path class="fil3" d="M333 242l-65 -37 -65 -38c-3,-1 -6,-1 -9,0 -3,2 -4,5 -4,8l0 70c48,6 96,6 145,-1 -1,-1 -1,-1 -2,-2z"/>
+  <path class="fil4 str0" d="M60 120l50 0 0 50 -50 0 0 -50zm0 70l50 0 0 50 -50 0 0 -50zm0 70l50 0 0 50 -50 0 0 -50zm0 70l50 0 0 50 -50 0 0 -50zm331 -210l50 0 0 50 -50 0 0 -50zm0 70l50 0 0 50 -50 0 0 -50zm0 70l50 0 0 50 -50 0 0 -50zm0 70l50 0 0 50 -50 0 0 -50z"/>
+  <rect class="fil5 str1" x="20" y="80" width="460" height="340" rx="45" ry="45"/>
+ </g>
+</svg>

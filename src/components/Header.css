@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; 
+  background-color: #141414;
+  color: white;
+  width: 100vw; 
+  box-sizing: border-box; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 1000; 
+}
+
+  
+  .header__logo img {
+    height: 40px;
+  }
+  
+  .header__nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .header__title {
+    font-size: 2.8rem; /* Ajusta según el diseño */
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra sutil */
+    font-family: 'Arial', sans-serif; 
+  }
+  
+  
+  .header__button {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #e50914;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .header__button:hover {
+    background-color: #b20710;
+  }
+
+  @media (max-width: 500px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .header__logo img {
+      height: 30px;
+    }
+  
+    .header__title {
+      font-size: 2rem;
+    }
+  
+    .header__nav {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .header__button {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Pantallas pequeñas generales */
+  @media (max-width: 768px) {
+    .header {
+      padding: 0.8rem 1.5rem;
+    }
+  
+    .header__logo img {
+      height: 35px;
+    }
+  
+    .header__title {
+      font-size: 2.4rem;
+    }
+  
+    .header__nav {
+      gap: 0.8rem;
+    }
+  
+    .header__button {
+      padding: 0.45rem 0.9rem;
+    }
+  }
+  
+  /* Orientación horizontal en móviles */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .header {
+      padding: 0.5rem 1rem;
+    }
+  
+    .header__logo img {
+      height: 32px;
+    }
+  
+    .header__title {
+      font-size: 2.2rem;
+    }
+  
+    .header__nav {
+      gap: 0.7rem;
+    }
+  
+    .header__button {
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+
+  @media (max-width: 375px) and (max-height: 667px) {
+    .header__nav {
+      flex-direction: row; /* Asegura que los botones estén en fila */
+      gap: 0.5rem;
+    }
+  
+    .header__button {
+      flex: 1; /* Asegura que los botones ocupen el mismo espacio */
+      text-align: center;
+    }
+  }  
+
+  
+  
+  

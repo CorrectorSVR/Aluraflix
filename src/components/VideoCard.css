@@ -1,0 +1,142 @@
+.video-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  margin: 8px;         
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Asegura que las imágenes no sobresalgan del contenedor */
+  transition: transform 0.3s ease;
+}
+
+.video-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* Agrega una transición suave al efecto de zoom */
+}
+
+.video-card:hover img {
+  transform: scale(1.15); /* Aumenta ligeramente el tamaño de la imagen */
+}
+
+.video-card h3 {
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+.video-card .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.video-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.video-card button:hover {
+  background-color: #0056b3;
+}
+
+.video-card button.delete {
+  background-color: #dc3545;
+}
+
+.video-card button.delete:hover {
+  background-color: #c82333;
+}
+
+.video-card .view-button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4b0082; 
+  color: white; 
+  text-decoration: none; 
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.video-card .view-button:hover {
+  background-color: #5e0a3b; 
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.modal-footer .save-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50; 
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-footer .save-button:hover {
+  background-color: #45a049; 
+}
+
+.modal-footer .clear-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f44336; 
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-footer .clear-button:hover {
+  background-color: #d32f2f; 
+}
+
+  @media (orientation: landscape) {
+    .video-card {
+      flex-direction: row;
+      max-width: 100%;
+    }
+  
+    .video-card img {
+      width: 40%;
+    }
+  
+    .video-card-content {
+      width: 60%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .video-card {
+      flex-direction: row;
+      max-width: 600px;
+    }
+  
+    .video-card img {
+      width: 50%;
+    }
+  
+    .video-card-content {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .video-card {
+      max-width: 800px;
+    }
+  }
+  

@@ -1,0 +1,134 @@
+.category {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.category h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(45deg, #ff6b6b, #f06595);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category h2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category.animation h2 {
+  background: linear-gradient(45deg, #d63535, #bb8240); 
+}
+
+.category.videogame h2 {
+  background: linear-gradient(45deg, #2ba769, #49524d); 
+}
+
+.category.music h2 {
+  background: linear-gradient(45deg, #e02a2a, #1818c4); 
+}
+
+.video-grid {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+}
+
+.category-item {
+  flex: 1;
+  text-align: center;
+  max-width: 300px; /* Limita el ancho máximo de cada item */
+}
+
+/* Galaxy Note 20, Galaxy Note 20 Ultra */
+@media (max-width: 412px) {
+  .video-grid {
+    gap: 0.5rem;
+  }
+
+  .category-item {
+    max-width: 100%; 
+  }
+}
+
+/* Galaxy S10/S10+, Galaxy S20, Galaxy S20 Ultra, Galaxy S20+ */
+@media (max-width: 360px) {
+  .video-grid {
+    gap: 0.5rem;
+  }
+
+  .category-item {
+    max-width: 100%; 
+  }
+}
+
+/* iPad iPadOS 14.7.1 */
+@media (max-width: 768px) {
+  .video-grid {
+    gap: 0.75rem;
+  }
+
+  .category-item {
+    max-width: 45%; 
+  }
+}
+
+/* iPhone 11 PRO, iPhone 11 PRO MAX, iPhone 12/13 + Pro, iPhone 12/13 mini, iPhone 12/13 Max, iPhone SE 2nd gen */
+@media (max-width: 414px) {
+  .video-grid {
+    gap: 0.5rem;
+  }
+
+  .category-item {
+    max-width: 100%; 
+  }
+}
+
+/* Kindle Fire HDX LINUX */
+@media (max-width: 800px) {
+  .video-grid {
+    gap: 0.75rem;
+  }
+
+  .category-item {
+    max-width: 45%; 
+  }
+}
+
+/* Estilos específicos para orientación horizontal */
+@media (orientation: landscape) {
+  .video-grid {
+    gap: 0.5rem;
+  }
+
+  .category-item {
+    max-width: 30%; 
+  }
+}
+
+/* Estilos específicos para orientación vertical */
+@media (orientation: portrait) {
+  .video-grid {
+    gap: 1rem;
+  }
+
+  .category-item {
+    max-width: 100%; 
+  }
+}
+
+  
+  
+
+
+

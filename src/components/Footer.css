@@ -1,0 +1,23 @@
+.footer {
+    background-color: #2c3e50; 
+    text-align: center;
+    padding: 1.5rem 0;        /* Espaciado vertical */
+    font-size: 1rem;
+    color: #ffffff !important;    
+  }
+  
+  .footer p {
+    margin: 0.5rem 0;         /* Separación entre líneas */
+  }
+  
+  .footer-year {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;        /* Tamaño de fuente un poco más pequeño */
+  }
+
+  .footer p, .footer span {
+    color: inherit; /* Heredará el color del padre */
+  }
+  
+ 
+  
