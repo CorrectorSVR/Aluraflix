@@ -7,6 +7,8 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isViewing, setIsViewing] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL; // Usar la variable de entorno
+
   const handleDelete = () => {
     Swal.fire({
       title: '¿Estás seguro?',
@@ -19,16 +21,24 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://apirest-flix.vercel.app/videos/${video.id}`, {
+        fetch(`${API_URL}/videos/${video.id}`, { // Usar la variable de entorno en la URL
           method: "DELETE",
         })
-          .then(() => {
-            Swal.fire(
-              '¡Eliminado!',
-              'El video ha sido eliminado.',
-              'success'
-            );
-            onDelete(video.id);
+          .then((response) => {
+            if (response.ok) {
+              Swal.fire(
+                '¡Eliminado!',
+                'El video ha sido eliminado.',
+                'success'
+              );
+              onDelete(video.id);
+            } else {
+              Swal.fire(
+                'Error',
+                'Hubo un problema al eliminar el video.',
+                'error'
+              );
+            }
           })
           .catch((error) => {
             Swal.fire(
@@ -58,7 +68,7 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
 
   return (
     <div className="video-card">
-      <img src={video.previewImage} alt={video.title} />
+      <img src={video.image} alt={video.title} />
       <h3>{video.title}</h3>
       <div className="actions">
         <button onClick={handleEdit}>Editar</button>
@@ -72,7 +82,7 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
               <iframe
                 width="560"
                 height="315"
-                src={video.url.replace("watch?v=", "embed/")}
+                src={video.video.replace("watch?v=", "embed/")}
                 title={video.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -87,5 +97,3 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
 };
 
 export default VideoCard;
-
-

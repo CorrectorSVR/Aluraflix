@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Dead Cells Inmortalis",
-      "previewImage": "/Inmortals.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Inmortals.jpg",
       "url": "https://www.youtube.com/watch?v=B3gdVvAu0fo",
       "category": "Animation",
       "description": "Serie basada en un videojuego Roguelike"
@@ -11,7 +11,7 @@
     {
       "id": "2",
       "title": "Murder Drones",
-      "previewImage": "/Drones.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Drones.jpg",
       "url": "https://www.youtube.com/watch?v=mImFz8mkaHo",
       "category": "Animation",
       "description": "Serie de animación indie cgi"
@@ -19,7 +19,7 @@
     {
       "id": "3",
       "title": "Tales of Zestiria",
-      "previewImage": "/Zestiria w.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Zestiria w.jpg",
       "url": "https://www.youtube.com/watch?v=6P-GnpOKVeM",
       "category": "Animation",
       "description": "Serie basada en un videojuego rpg"
@@ -27,7 +27,7 @@
     {
       "id": "4",
       "title": "Shadow Dark Beginnings",
-      "previewImage": "/shadow-y-maria.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/shadow-y-maria.jpg",
       "url": "https://www.youtube.com/watch?v=1s188WNEiqw",
       "category": "Animation",
       "description": "Mini serie basada en un videojuego de plataformas"
@@ -35,7 +35,7 @@
     {
       "id": "5",
       "title": "Sky Childrens of Light",
-      "previewImage": "/Sky.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Sky.jpg",
       "url": "https://www.youtube.com/watch?v=rLOesNZTtqo",
       "category": "Videogame",
       "description": "Videojuego Zen free to play "
@@ -43,7 +43,7 @@
     {
       "id": "6",
       "title": "Nier Automata",
-      "previewImage": "/Nier.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Nier.jpg",
       "url": "https://www.youtube.com/watch?v=B6kolEKghBw",
       "category": "Videogame",
       "description": "Videojuego rpg de acción"
@@ -51,7 +51,7 @@
     {
       "id": "7",
       "title": "Clock Tower Rewind",
-      "previewImage": "/Clock tower.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Clock tower.jpg",
       "url": "https://www.youtube.com/watch?v=EdV1kzvyr9w",
       "category": "Videogame",
       "description": "Videojuego de horror point and click"
@@ -59,7 +59,7 @@
     {
       "id": "8",
       "title": "Final Fantasy vs XIII",
-      "previewImage": "/Stelle.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Stelle.jpg",
       "url": "https://www.youtube.com/watch?v=YiIx9VJWSl8",
       "category": "Videogame",
       "description": "Videojuego spin off rpg de acción"
@@ -67,7 +67,7 @@
     {
       "id": "9",
       "title": "Salth of the Earth",
-      "previewImage": "/Lovesdrug.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Lovesdrug.jpg",
       "url": "https://www.youtube.com/watch?v=Balo8b7fESI",
       "category": "Music",
       "description": "Canción de rock alternativo"
@@ -75,7 +75,7 @@
     {
       "id": "10",
       "title": "Hymn for the missing",
-      "previewImage": "/Missinge.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Missinge.jpg",
       "url": "https://www.youtube.com/watch?v=5jMsmy_xt3U",
       "category": "Music",
       "description": "Canción de nu metal"
@@ -83,7 +83,7 @@
     {
       "id": "11",
       "title": "Decretum",
-      "previewImage": "/Decretum.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/Decretum.jpg",
       "url": "https://www.youtube.com/watch?v=A_k9d391eP0",
       "category": "Music",
       "description": "Banda sonora de un anime magical girls"
@@ -91,7 +91,7 @@
     {
       "id": "12",
       "title": "Lightwaves",
-      "previewImage": "/LightWaves.jpg",
+      "previewImage": "https://apirest-flix.vercel.app/images/LightWaves.jpg",
       "url": "https://www.youtube.com/watch?v=DjJKHFwLpg4",
       "category": "Music",
       "description": "Banda sonora del videojuego Final Fantasy X-2"

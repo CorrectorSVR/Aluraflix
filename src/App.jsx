@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import NewVideo from "./pages/NewVideo";
-import Banner from "./components/Banner";
-import Footer from "./components/Footer";
-import "./styles/global.css";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home';
+import NewVideo from './pages/NewVideo';
+import Banner from './components/Banner';
+import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   const [categories, setCategories] = useState({
@@ -14,21 +14,23 @@ function App() {
     Music: [],
   });
 
+  const API_URL = import.meta.env.VITE_API_URL; // Usar la variable de entorno
+
   useEffect(() => {
-    fetch("http://localhost:3001/videos")
+    fetch(`${API_URL}/videos`) // Usar la variable de entorno en la URL
       .then((response) => response.json())
       .then((data) => {
-        const animationVideos = data.filter((video) => video.category === "Animation");
-        const videogameVideos = data.filter((video) => video.category === "Videogame");
-        const musicVideos = data.filter((video) => video.category === "Music");
+        const animationVideos = data.filter((video) => video.category === 'Animation');
+        const videogameVideos = data.filter((video) => video.category === 'Videogame');
+        const musicVideos = data.filter((video) => video.category === 'Music');
         setCategories({
           Animation: animationVideos,
           Videogame: videogameVideos,
           Music: musicVideos,
         });
       })
-      .catch((error) => console.error("Error fetching videos:", error));
-  }, []);
+      .catch((error) => console.error('Error fetching videos:', error));
+  }, [API_URL]);
 
   return (
     <Router>
