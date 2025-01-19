@@ -10,7 +10,7 @@ const Modal = ({ video, onClose, isViewing, onSave }) => {
     description: video.description,
   });
 
-  const API_URL = import.meta.env.VITE_API_URL; // Usar la variable de entorno
+  const API_URL = "https://apiproject-nu.vercel.app"; // Usar la nueva URL de la API
 
   useEffect(() => {
     setFormData({
@@ -28,15 +28,20 @@ const Modal = ({ video, onClose, isViewing, onSave }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${API_URL}/videos/${video.id}`, { // Usar la variable de entorno en la URL
+    fetch(`${API_URL}/api/videos/${video.id}`, { // Usar la nueva URL de la API
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
-      .then(() => {
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al actualizar el video");
+        }
+        return response.json();
+      })
+      .then((data) => {
         alert("Video updated successfully!");
         onSave(formData);
         onClose();
@@ -92,6 +97,7 @@ const Modal = ({ video, onClose, isViewing, onSave }) => {
                 name="image"
                 value={formData.image}
                 onChange={handleChange}
+                placeholder="URL completa de la imagen"
               />
             </div>
             <div className="form-group">
@@ -101,6 +107,7 @@ const Modal = ({ video, onClose, isViewing, onSave }) => {
                 name="video"
                 value={formData.video}
                 onChange={handleChange}
+                placeholder="URL completa del video"
               />
             </div>
             <div className="form-group">
@@ -111,12 +118,18 @@ const Modal = ({ video, onClose, isViewing, onSave }) => {
                 onChange={handleChange}
               ></textarea>
             </div>
-            <div className="modal-footer">
+            <div className="form-footer">
               <button type="submit" className="save-button">
                 Guardar
               </button>
-              <button type="button" className="clear-button" onClick={onClose}>
-                Cancelar
+              <button type="button" className="clear-button" onClick={() => setFormData({
+                title: "",
+                category: "",
+                image: "",
+                video: "",
+                description: "",
+              })}>
+                Limpiar
               </button>
             </div>
           </form>

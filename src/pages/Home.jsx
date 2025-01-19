@@ -5,15 +5,24 @@ import VideoCard from "../components/VideoCard";
 
 const Home = ({ categories: initialCategories }) => {
   const [categories, setCategories] = useState(initialCategories);
-  const API_URL = import.meta.env.VITE_API_URL; // Usar la variable de entorno
+  const API_URL = "https://apiproject-nu.vercel.app"; // Usar la nueva URL de la API
 
   useEffect(() => {
-    fetch(`${API_URL}/videos`) // Usar la variable de entorno en la URL
-      .then((response) => response.json())
+    fetch(`${API_URL}/api/videos`) // Usar la nueva URL de la API
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los videos");
+        }
+        return response.json();
+      })
       .then((data) => {
-        const animationVideos = data.filter((video) => video.category === "Animation");
-        const videogameVideos = data.filter((video) => video.category === "Videogame");
-        const musicVideos = data.filter((video) => video.category === "Music");
+        console.log("API response data:", data); // Verificar la estructura de la respuesta de la API
+        const videos = data.videos; // Acceder a la propiedad 'videos' dentro de la respuesta
+
+        const animationVideos = videos.filter((video) => video.category === "Animation");
+        const videogameVideos = videos.filter((video) => video.category === "Videogame");
+        const musicVideos = videos.filter((video) => video.category === "Music");
+
         setCategories({
           Animation: animationVideos,
           Videogame: videogameVideos,
@@ -32,21 +41,20 @@ const Home = ({ categories: initialCategories }) => {
   };
 
   const handleDelete = (videoId) => {
-    fetch(`${API_URL}/videos/${videoId}`, { // Usar la variable de entorno en la URL
+    fetch(`${API_URL}/api/videos/${videoId}`, { // Usar la nueva URL de la API
       method: "DELETE",
     })
       .then((response) => {
-        if (response.ok) {
-          setCategories((prevCategories) => {
-            const newCategories = { ...prevCategories };
-            Object.keys(newCategories).forEach((category) => {
-              newCategories[category] = newCategories[category].filter((video) => video.id !== videoId);
-            });
-            return newCategories;
-          });
-        } else {
-          console.error("Error deleting video");
+        if (!response.ok) {
+          throw new Error("Error al eliminar el video");
         }
+        setCategories((prevCategories) => {
+          const newCategories = { ...prevCategories };
+          Object.keys(newCategories).forEach((category) => {
+            newCategories[category] = newCategories[category].filter((video) => video.id !== videoId);
+          });
+          return newCategories;
+        });
       })
       .catch((error) => console.error("Error deleting video:", error));
   };
@@ -67,14 +75,19 @@ const Home = ({ categories: initialCategories }) => {
       description: event.target.description.value,
     };
 
-    fetch(`${API_URL}/videos`, { // Usar la variable de entorno en la URL
+    fetch(`${API_URL}/api/videos`, { // Usar la nueva URL de la API
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newVideo),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al agregar el video");
+        }
+        return response.json();
+      })
       .then((data) => {
         setCategories((prevCategories) => {
           const newCategories = { ...prevCategories };
@@ -126,11 +139,11 @@ const Home = ({ categories: initialCategories }) => {
             </div>
             <div className="form-group">
               <label>Imagen</label>
-              <input type="text" name="image" defaultValue={selectedVideo?.image || ""} />
+              <input type="text" name="image" defaultValue={selectedVideo?.image || ""} placeholder="URL completa de la imagen" />
             </div>
             <div className="form-group">
               <label>Video</label>
-              <input type="text" name="video" defaultValue={selectedVideo?.video || ""} />
+              <input type="text" name="video" defaultValue={selectedVideo?.video || ""} placeholder="URL completa del video" />
             </div>
             <div className="form-group">
               <label>Descripción</label>

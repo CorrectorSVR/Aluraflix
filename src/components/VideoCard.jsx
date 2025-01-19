@@ -7,7 +7,7 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isViewing, setIsViewing] = useState(false);
 
-  const API_URL = import.meta.env.VITE_API_URL; // Usar la variable de entorno
+  const API_URL = "https://apiproject-nu.vercel.app"; // Usar la nueva URL de la API
 
   const handleDelete = () => {
     Swal.fire({
@@ -21,24 +21,19 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`${API_URL}/videos/${video.id}`, { // Usar la variable de entorno en la URL
+        fetch(`${API_URL}/api/videos/${video.id}`, { // Usar la nueva URL de la API
           method: "DELETE",
         })
           .then((response) => {
-            if (response.ok) {
-              Swal.fire(
-                '¡Eliminado!',
-                'El video ha sido eliminado.',
-                'success'
-              );
-              onDelete(video.id);
-            } else {
-              Swal.fire(
-                'Error',
-                'Hubo un problema al eliminar el video.',
-                'error'
-              );
+            if (!response.ok) {
+              throw new Error("Error al eliminar el video");
             }
+            Swal.fire(
+              '¡Eliminado!',
+              'El video ha sido eliminado.',
+              'success'
+            );
+            onDelete(video.id);
           })
           .catch((error) => {
             Swal.fire(
@@ -68,7 +63,7 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
 
   return (
     <div className="video-card">
-      <img src={video.image} alt={video.title} />
+      <img src={video.image} alt={video.title} onError={(e) => { e.target.onerror = null; e.target.src = "default-image-url.jpg"; }} /> {/* Verificar que la URL de la imagen sea completa */}
       <h3>{video.title}</h3>
       <div className="actions">
         <button onClick={handleEdit}>Editar</button>

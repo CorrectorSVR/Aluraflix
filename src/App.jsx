@@ -14,15 +14,23 @@ function App() {
     Music: [],
   });
 
-  const API_URL = import.meta.env.VITE_API_URL; // Usar la variable de entorno
+  const API_URL = "https://apiproject-nu.vercel.app"; // Usar la nueva URL de la API
 
   useEffect(() => {
-    fetch(`${API_URL}/videos`) // Usar la variable de entorno en la URL
-      .then((response) => response.json())
+    fetch(`${API_URL}/api/videos`) // Usar la nueva URL de la API
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener los videos");
+        }
+        return response.json();
+      })
       .then((data) => {
-        const animationVideos = data.filter((video) => video.category === 'Animation');
-        const videogameVideos = data.filter((video) => video.category === 'Videogame');
-        const musicVideos = data.filter((video) => video.category === 'Music');
+        console.log("API response data:", data); // Verificar la estructura de la respuesta de la API
+        const videos = data.videos; // Acceder a la propiedad 'videos' dentro de la respuesta
+
+        const animationVideos = videos.filter((video) => video.category === 'Animation');
+        const videogameVideos = videos.filter((video) => video.category === 'Videogame');
+        const musicVideos = videos.filter((video) => video.category === 'Music');
         setCategories({
           Animation: animationVideos,
           Videogame: videogameVideos,
@@ -46,7 +54,5 @@ function App() {
 }
 
 export default App;
-
-
 
 

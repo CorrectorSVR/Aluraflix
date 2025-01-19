@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./NewVideo.css";
+import Swal from "sweetalert2";
 
 const NewVideo = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ const NewVideo = () => {
     description: "",
   });
 
-  const API_URL = import.meta.env.VITE_API_URL; // Usar la variable de entorno
+  const API_URL = "https://apiproject-nu.vercel.app"; // Usar la nueva URL de la API
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,16 +19,21 @@ const NewVideo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${API_URL}/videos`, { // Usar la variable de entorno en la URL
+    fetch(`${API_URL}/api/videos`, { // Usar la nueva URL de la API
       method: "POST",
       headers: {
-        "Content-Type": "application/json",  
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),  //
+      body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al agregar el video");
+        }
+        return response.json();
+      })
       .then((data) => {
-        alert("Video added successfully!");
+        Swal.fire("Video added successfully!");
         setFormData({
           title: "",
           category: "",
@@ -36,7 +42,10 @@ const NewVideo = () => {
           description: "",
         });
       })
-      .catch((error) => console.error("Error adding video:", error));
+      .catch((error) => {
+        console.error("Error adding video:", error);
+        Swal.fire("Error", "Hubo un problema al agregar el video", "error");
+      });
   };
 
   const handleClear = () => {
@@ -82,6 +91,7 @@ const NewVideo = () => {
             name="image"
             value={formData.image}
             onChange={handleChange}
+            placeholder="URL completa de la imagen"
           />
         </div>
         <div className="form-group">
@@ -91,6 +101,7 @@ const NewVideo = () => {
             name="video"
             value={formData.video}
             onChange={handleChange}
+            placeholder="URL completa del video"
           />
         </div>
         <div className="form-group">

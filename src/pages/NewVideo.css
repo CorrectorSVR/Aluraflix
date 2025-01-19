@@ -46,7 +46,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
-  margin-right: 80px;
+  margin-right: 10px; /* Añadir margen derecho para espaciado */
 }
 
 .new-video .form-footer .save-button {
@@ -91,6 +91,7 @@
   .new-video .form-footer button {
     width: 100%;
     padding: 10px;
+    margin-right: 0; /* Eliminar margen derecho en pantallas pequeñas */
   }
 }
 
