@@ -21,9 +21,9 @@ const NewVideo = () => {
     fetch(`${API_URL}/videos`, { // Usar la variable de entorno en la URL
       method: "POST",
       headers: {
-        "Content-Type": "application/json",  //
+        "Content-Type": "application/json",  
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(formData),  //
     })
       .then((response) => response.json())
       .then((data) => {
