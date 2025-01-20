@@ -13,7 +13,7 @@
   position: relative;
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: linear-gradient(45deg, #ff6b6b, #f06595);
+  background: linear-gradient(45deg, #e7cf45, #278813);
   color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -49,6 +49,7 @@
   text-align: center;
   max-width: 300px; /* Limita el ancho máximo de cada item */
 }
+
 
 /* Galaxy Note 20, Galaxy Note 20 Ultra */
 @media (max-width: 412px) {

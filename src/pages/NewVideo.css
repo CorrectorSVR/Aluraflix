@@ -4,57 +4,49 @@
   margin: 0 auto;
 }
 
-.new-video h2 {
+.new-video h1 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.new-video form {
+.new-video-form {
   display: flex;
   flex-direction: column;
 }
 
-.new-video .form-group {
-  margin-bottom: 15px;
+.new-video-form label {
+  margin-bottom: 10px;
 }
 
-.new-video .form-group label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.new-video .form-group input,
-.new-video .form-group select,
-.new-video .form-group textarea {
+.new-video-form input,
+.new-video-form select,
+.new-video-form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
 }
 
-.new-video .form-footer {
+.form-actions {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.new-video .form-footer button {
+.form-actions button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1rem;
-  margin-right: 10px; /* Añadir margen derecho para espaciado */
 }
 
-.new-video .form-footer .save-button {
+.form-actions button[type="submit"] {
   background-color: #28a745;
   color: white;
 }
 
-.new-video .form-footer .clear-button {
+.form-actions button[type="reset"] {
   background-color: #dc3545;
   color: white;
 }
@@ -66,13 +58,13 @@
     max-width: 80%;
   }
 
-  .new-video .form-group input,
-  .new-video .form-group select,
-  .new-video .form-group textarea {
-    padding: 8px;
+  .new-video-form input,
+  .new-video-form select,
+  .new-video-form textarea {
+    padding: 6px;
   }
 
-  .new-video .form-footer button {
+  .form-actions button {
     padding: 8px 16px;
   }
 }
@@ -83,34 +75,33 @@
     max-width: 90%;
   }
 
-  .new-video .form-footer {
+  .form-actions {
     flex-direction: column;
     gap: 10px;
   }
 
-  .new-video .form-footer button {
+  .form-actions button {
     width: 100%;
     padding: 10px;
-    margin-right: 0; /* Eliminar margen derecho en pantallas pequeñas */
   }
 }
 
 @media (max-width: 480px) {
-  .new-video h2 {
+  .new-video h1 {
     font-size: 1.5rem;
   }
 
-  .new-video .form-group label {
+  .new-video-form label {
     font-size: 0.9rem;
   }
 
-  .new-video .form-group input,
-  .new-video .form-group select,
-  .new-video .form-group textarea {
+  .new-video-form input,
+  .new-video-form select,
+  .new-video-form textarea {
     padding: 5px;
   }
 
-  .new-video .form-footer button {
+  .form-actions button {
     padding: 8px;
     font-size: 0.9rem;
   }

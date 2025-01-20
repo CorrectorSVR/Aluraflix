@@ -7,8 +7,6 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isViewing, setIsViewing] = useState(false);
 
-  const API_URL = "https://apiproject-nu.vercel.app"; // Usar la nueva URL de la API
-
   const handleDelete = () => {
     Swal.fire({
       title: '¿Estás seguro?',
@@ -21,19 +19,24 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`${API_URL}/api/videos/${video.id}`, { // Usar la nueva URL de la API
+        fetch(`https://apiproject-nu.vercel.app/api/videos/${video.id}`, {
           method: "DELETE",
         })
           .then((response) => {
-            if (!response.ok) {
-              throw new Error("Error al eliminar el video");
+            if (response.ok) {
+              Swal.fire(
+                '¡Eliminado!',
+                'El video ha sido eliminado.',
+                'success'
+              );
+              onDelete(video.id);
+            } else {
+              Swal.fire(
+                'Error',
+                'Hubo un problema al eliminar el video.',
+                'error'
+              );
             }
-            Swal.fire(
-              '¡Eliminado!',
-              'El video ha sido eliminado.',
-              'success'
-            );
-            onDelete(video.id);
           })
           .catch((error) => {
             Swal.fire(
@@ -63,7 +66,7 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
 
   return (
     <div className="video-card">
-      <img src={video.image} alt={video.title} onError={(e) => { e.target.onerror = null; e.target.src = "default-image-url.jpg"; }} /> {/* Verificar que la URL de la imagen sea completa */}
+      <img src={video.previewImage} alt={video.title} />
       <h3>{video.title}</h3>
       <div className="actions">
         <button onClick={handleEdit}>Editar</button>
@@ -77,7 +80,7 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
               <iframe
                 width="560"
                 height="315"
-                src={video.video.replace("watch?v=", "embed/")}
+                src={video.url.replace("watch?v=", "embed/")}
                 title={video.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -92,3 +95,4 @@ const VideoCard = ({ video, onEdit, onDelete }) => {
 };
 
 export default VideoCard;
+
