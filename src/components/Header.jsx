@@ -6,11 +6,9 @@ import "./Header.css"; // Importa los estilos para el Header
 function Header() {
   return (
     <header className="header">
-      <div className="header__logo">
-        <Link to="/">
-        <img src="/videoplayhd.svg" alt="Aluraflix Logo" />
-        </Link>
-      </div>
+      <a href="#banner">
+        <img src="/videoplayhd.svg" className="header__logo" alt="Logo" />
+      </a>
       <h1 className="header__title">Aluraflix</h1>
       <nav className="header__nav">
         <Link to="/" className="header__button">

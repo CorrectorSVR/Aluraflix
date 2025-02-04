@@ -1,11 +1,9 @@
-import React from "react";
+import React from 'react';
+import './Banner.css';
 
-import "./Banner.css";
-
-const Banner = () => {
+function Banner() {
   return (
-    <section className="banner">
-      
+    <section id="banner" className="banner">
       <img 
         src="/Cinemagirl.jpg" 
         alt="Chica en el cine" 
@@ -16,7 +14,7 @@ const Banner = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Banner;
 

@@ -14,9 +14,11 @@
 }
 
   
-  .header__logo img {
-    height: 40px;
-  }
+.header__logo {
+  height: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
+  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+}
+
   
   .header__nav {
     display: flex;
