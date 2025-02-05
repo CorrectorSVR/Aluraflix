@@ -54,8 +54,8 @@
       padding: 1rem;
     }
   
-    .header__logo img {
-      height: 30px;
+    .header__logo {
+      height: 20px;
     }
   
     .header__title {
@@ -79,8 +79,8 @@
       padding: 0.8rem 1.5rem;
     }
   
-    .header__logo img {
-      height: 35px;
+    .header__logo  {
+      height: 25px;
     }
   
     .header__title {
@@ -102,8 +102,8 @@
       padding: 0.5rem 1rem;
     }
   
-    .header__logo img {
-      height: 32px;
+    .header__logo  {
+      height: 30px;
     }
   
     .header__title {
